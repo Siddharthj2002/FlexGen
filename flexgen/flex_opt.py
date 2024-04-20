@@ -15,7 +15,7 @@ from tqdm import tqdm
 import torch
 from transformers import AutoTokenizer
 
-from flexgen.compression import CompressionConfig
+from flexgen.compression2 import CompressionConfig
 from flexgen.opt_config import OptConfig, get_opt_config, download_opt_weights
 from flexgen.pytorch_backend import (TorchDevice, TorchDisk, TorchLink,
     TorchMixedDevice, DeviceType, general_copy, fix_recursive_import)
