@@ -391,7 +391,6 @@ class TorchCompressedDevice:
         self.name = "compressed"
         self.device_type = DeviceType.COMPRESSED
         self.base_device = base_device
-        self.num_bits = 4
 
         self.data_decompress_workspace = None
         self.workspace_pt = 0
@@ -512,7 +511,7 @@ class TorchCompressedDevice:
 
     def decompress(self, tensor):
         data, scale, comp_config = tensor.data
-        group_size, _, group_dim, _ = (
+        group_size, num_bits, group_dim, _ = (
             comp_config.group_size, comp_config.num_bits,
             comp_config.group_dim, comp_config.symmetric)
 
