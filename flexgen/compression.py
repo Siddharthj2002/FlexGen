@@ -386,12 +386,12 @@ class CompressionConfig:
 
 class TorchCompressedDevice:
     """Manage tensors stored in a compressed format."""
-    num_bits = 4
 
     def __init__(self, base_device):
         self.name = "compressed"
         self.device_type = DeviceType.COMPRESSED
         self.base_device = base_device
+        self.num_bits = 4
 
         self.data_decompress_workspace = None
         self.workspace_pt = 0
