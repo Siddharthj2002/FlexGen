@@ -1201,10 +1201,10 @@ def run_flexgen(args):
                     args.overlap, args.sep_layer, args.pin_weight,
                     args.cpu_cache_compute, args.attn_sparsity,
                     args.compress_weight,
-                    CompressionConfig(num_bits=4, group_size=64,
+                    CompressionConfig(num_bits=2, group_size=64,
                                       group_dim=0, symmetric=False),
                     args.compress_cache,
-                    CompressionConfig(num_bits=4, group_size=64,
+                    CompressionConfig(num_bits=2, group_size=64,
                                       group_dim=2, symmetric=False))
     assert not (args.compress_cache and args.attn_sparsity < 1.0), "Not implemented"
 
